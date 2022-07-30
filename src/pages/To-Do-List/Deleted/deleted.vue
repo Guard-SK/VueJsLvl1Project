@@ -5,14 +5,15 @@
       <li>
         <a href="index.html">Index</a>
       </li>
-            <li>
+      <li>
         <a href="toDoList.html">To Do List</a>
       </li>
     </div>
     <div>
-      <ul>
-        <li v-for="(item) in list" :key="item.id">{{index}} {{item.message}}</li>
-      </ul>
+      <button @click="add" class="btn">BUTTON</button>
+      <p>
+        example test {{newItem}}
+      </p>
     </div>
   </div>
 </template>
@@ -23,10 +24,19 @@ export default {
   data () {
     return {
       list: [
-        {id:1, message:'example todo', deleted: false}
+        
       ],
+      data: 0,
+      somedata: true,
       newItem: '',
+      push_newItem: 'xdxdxd ',
       header: 'Deleted From To Do List'
+    }
+  },
+  methods: {
+    add() {
+      this. newItem = this.newItem + '\n' + this.push_newItem
+      console.log('button called')
     }
   }
 }
